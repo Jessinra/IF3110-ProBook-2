@@ -84,6 +84,7 @@ class User_model{
     function getCard(){
         return $this->card;
     }
+
     function save($conn) {
         $sql = "INSERT INTO user (name, username, email, hashedPassword, address, phone, image_url, card) VALUES ('$this->name','$this->username','$this->email','$this->hashedPassword', '$this->address','$this->phone','$this->imageUrl', '$this->card')";
         if ($conn->query($sql) === TRUE) {

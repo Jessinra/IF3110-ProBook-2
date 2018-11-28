@@ -6,6 +6,7 @@ import org.json.JSONObject;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import javax.xml.ws.Endpoint;
+import java.util.Arrays;
 import java.util.Random;
 
 @WebService()
@@ -27,37 +28,46 @@ public class BookCatalogueImpl implements BookCatalogue {
 
     public String getBookDetail(String bookId) throws Exception{
         String result = googleBookAPI.getBookDetail(bookId);
-
         return resultHandler.parseBookDetail(result);
     }
 
-    public boolean buyBook(String id, String cardId, int total) throws  Exception {
-        System.out.println("buybook");
-        String result =  getBookDetail(id);
-        System.out.println(result);
+    public boolean buyBook(String bookId, String cardId, int bookAmount) throws Exception {
+
+        System.out.println("bookId : " + bookId);
+        System.out.println("cardId : " + cardId);
+        System.out.println("bookAmount : " + bookAmount);
+
+        String result = getBookDetail(bookId);
         JSONObject jsonResult = new JSONObject(result);
-        String[] genre = jsonResult.getString("Category").replaceAll(" ","").split("/");
-        float cost = BuyBook.getCost(id) * total;
-        System.out.println("Cost: " + cost);
-        boolean response = false    ;
+
+        String[] genres = jsonResult.getString("Category").replaceAll(" ","").split("/");
+        float totalBookPrice = BuyBook.getPrice(bookId) * bookAmount;
+
+        System.out.println("genres : " + Arrays.toString(genres));
+        System.out.println("totalBookPrice : " + totalBookPrice);
+
+        boolean response = false;
         try{
-            if (cost < 0){
-                throw new Exception();
+            if (totalBookPrice < 0){
+                throw new Exception("Cost less than 0");
             }
-            String postResponse = BuyBook.sendPost(cardId, cost);
-            JSONObject res = new JSONObject(postResponse);
-            if(! res.getBoolean("err")){
+            String checkoutResponse = BuyBook.checkout(cardId, totalBookPrice);
+            JSONObject res = new JSONObject(checkoutResponse);
+
+            // is this the way to hceck for success ?
+            if(! res.has("err")) {
                 System.out.println("UPDATE");
-                response = BuyBook.upsert(id, genre, total);
-            }else{
-                response = false;
+                response = BuyBook.upsert(bookId, genres, bookAmount);
             }
+
         } catch (Exception e){
-
+            System.out.println("error in buy book");
+            System.out.println(e.getMessage());
         }
-
         return response;
     }
+
+
 
     public String getRecommendation(String[] genres) throws Exception{
         // random genre

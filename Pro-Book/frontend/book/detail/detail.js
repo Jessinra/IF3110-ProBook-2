@@ -1,6 +1,6 @@
-window.onload = function() {
+window.onload = function () {
     showStars(rating);
-}
+};
 
 function showStars(rating) {
     star1 = document.getElementById("star1");
@@ -27,28 +27,30 @@ function showStars(rating) {
 }
 
 
-function makeOrder(username, book_id) {
-    var e = document.getElementById("order-quantity");
-    var amount = parseInt(e.options[e.selectedIndex].text);
-    var xhttp = new XMLHttpRequest();
-    var url = "/tugasbesar2_2018/Pro-Book/index.php/Order/orderBook";
-    var params = 'username='+username+"&book_id="+book_id+"&amount="+amount;
+function makeOrder(book_id) {
+    let e = document.getElementById("order-quantity");
+    let amount = parseInt(e.options[e.selectedIndex].text);
+
+    let xhttp = new XMLHttpRequest();
+    let url = "/tugasbesar2_2018/Pro-Book/index.php/Order/orderBook";
+    let params = "book_id=" + book_id + "&amount=" + amount;
+
     xhttp.open("POST", url, true);
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.send(params);
 
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
-            if(xhttp.responseText == "false"){
+            if (xhttp.responseText == "false") {
                 window.location = "http://localhost/tugasbesar2_2018/Pro-Book/index.php/Auth/index"
             }
-            document.getElementById("success-message").innerHTML = "<p style='font-weight:bold'>Pesanan berhasil!</p><p>Nomor Transaksi:" + xhttp.responseText +"</p>";
+            document.getElementById("success-message").innerHTML = "<p style='font-weight:bold'>Pesanan berhasil!</p><p>Nomor Transaksi:" + xhttp.responseText + "</p>";
             document.getElementById("overlay").style.display = "flex";
             document.getElementById("feedback").style.display = "block";
-	    	document.getElementById("close-X").addEventListener("click", function(){
+            document.getElementById("close-X").addEventListener("click", function () {
                 document.getElementById("overlay").style.display = "none";
                 document.getElementById("feedback").style.display = "flex";
             });
         }
     }
-    xhttp.send(params);
 }

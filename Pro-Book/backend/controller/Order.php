@@ -1,5 +1,7 @@
 <?php
-    class Order{
+
+    class Order
+    {
         private $orderService;
 
         function __construct() {
@@ -17,20 +19,18 @@
 
         function orderBook() {
             $username = $GLOBALS['user']->getUserName();
-            if(!$username){
+            if (!$username) {
                 echo "false";
                 exit();
-            }else {
-                $username = $_POST["username"];
-                $book_id = $_POST["book_id"];
-                $amount = $_POST["amount"];
-                $username = strval($username);
+            } else {
+                $bookId = $_POST["book_id"];
+                $cardNum = $GLOBALS['user']->getCard();
+                $bookAmount = $_POST["amount"];
 
-                $order_id = $this->orderService->orderBook($username, $book_id, $amount);
-                echo "$order_id";
+                $order_id = $this->orderService->orderBook($username, $cardNum, $bookId, $bookAmount);
+                print_r($order_id);
             }
         }
     }
-
 
 ?>

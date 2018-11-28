@@ -17,13 +17,13 @@ class AuthService {
                 CloseCon($conn);
                 return $accessToken;
             } else{
+                CloseCon($conn);
                 return false;
             }
         } else {
+            CloseCon($conn);
             return false;
         }
-        CloseCon($conn);
-        return null;
     }
 
     public function checkAccessToken($token,$browser,$ip) {
@@ -34,18 +34,16 @@ class AuthService {
         if($result->num_rows === 1){
             $val = mysqli_fetch_assoc($result);
             CloseCon($conn);
-            return  new User_model($val['name'], $val['username'], $val['email'], $val['hashedPassword'], $val['address'], $val['phone'],$val['image_url'], $val['card']);
-            $accessToken = new Auth_model($user->getUsername(),$browser,$ip);
+            return new User_model($val['name'], $val['username'], $val['email'], $val['hashedPassword'], $val['address'], $val['phone'],$val['image_url'], $val['card']);
         }
         CloseCon($conn);
         return false;
-
     }
 
     public function deleteAccessToken($username) {
         $conn = OpenCon();
         $sql = "DELETE FROM auth WHERE username='$username'";
-        $result = $conn->query($sql);
+        $conn->query($sql);
         CloseCOn($conn);
     }
 

@@ -94,6 +94,5 @@ class User_service {
             return NULL;
         }
     }
-
 }
 ?>

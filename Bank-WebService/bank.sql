@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2018 at 04:27 AM
+-- Generation Time: Nov 28, 2018 at 08:05 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.0.32
 
@@ -40,8 +40,19 @@ CREATE TABLE `nasabah` (
 
 INSERT INTO `nasabah` (`Nama`, `Nomor_kartu`, `saldo`) VALUES
 ('Nicholas Wijaya', '2147483647', 539703),
-('toko', '123123123123', 777.896),
-('Ayrton', '123456789123', -478.336);
+('toko', '123123123123', 2125.9),
+('Ayrton', '123456789123', -1078.4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `otp`
+--
+
+CREATE TABLE `otp` (
+  `cardId` varchar(12) NOT NULL,
+  `tokenKey` varchar(12) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -67,7 +78,22 @@ INSERT INTO `transaksi` (`nomor_pengirim`, `nomor_penerima`, `jumlah`, `waktu`) 
 (2147483647, 2147483647, 269.6, '2018-11-22 23:24:09'),
 (2147483647, 2147483647, -2, '2018-11-23 09:57:10'),
 (2147483647, 2147483647, 106.868, '2018-11-23 10:12:08'),
-(2147483647, 2147483647, 106.868, '2018-11-23 10:18:58');
+(2147483647, 2147483647, 106.868, '2018-11-23 10:18:58'),
+(2147483647, 2147483647, 269.6, '2018-11-26 18:21:47'),
+(2147483647, 2147483647, 269.6, '2018-11-26 18:22:44'),
+(2147483647, 2147483647, 269.6, '2018-11-26 18:31:27'),
+(2147483647, 2147483647, 269.6, '2018-11-26 18:32:32'),
+(2147483647, 2147483647, 269.6, '2018-11-26 18:35:22');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `otp`
+--
+ALTER TABLE `otp`
+  ADD PRIMARY KEY (`cardId`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

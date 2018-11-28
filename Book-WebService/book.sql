@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2018 at 04:27 AM
+-- Generation Time: Nov 28, 2018 at 07:57 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.0.32
 
@@ -2280,7 +2280,7 @@ CREATE TABLE `sold` (
 INSERT INTO `sold` (`id`, `Total`) VALUES
 ('-6g0AQAAMAAJ', 2),
 ('-6lwCgAAQBAJ', 4),
-('-LjlAgAAQBAJ', 105),
+('-LjlAgAAQBAJ', 755),
 ('hjEFCAAAQBAJ', 8);
 
 --
@@ -2321,7 +2321,7 @@ ALTER TABLE `sold`
 -- AUTO_INCREMENT for table `genre`
 --
 ALTER TABLE `genre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables

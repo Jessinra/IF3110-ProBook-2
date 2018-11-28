@@ -4,9 +4,6 @@
     require_once 'backend/controller/helper.php';
     require_once 'backend/model/db/db_connection.php';
 
-    // error_reporting(E_ALL);
-    // ini_set('display_errors', 1);
-
     define('INDEX_PATH', 'backend/controller/');
     define('BASE_PATH', getcwd());
 

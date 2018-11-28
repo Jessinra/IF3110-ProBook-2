@@ -4,7 +4,8 @@
   "description": "RESTful bank",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:development": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +14,8 @@
   },
   "dependencies": {
     "express": "^4.16.4",
-    "mysql": "^2.16.0"
+    "mysql": "^2.16.0",
+    "otp.js": "^1.1.0",
+    "request": "^2.88.0"
   }
 }

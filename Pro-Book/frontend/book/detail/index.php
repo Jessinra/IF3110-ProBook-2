@@ -18,9 +18,9 @@
         <div class="kolom-md-10">
             <div class="row book-info">
                 <div class="kolom-md-10 display-block info-text-wrapper">
-                    <?php echo "<h1 style=\"color: orangered\">" . $result["Title"] . "</h1>" ?>
-                    <?php echo "<h5>" . $result["Author"] . "</h5>" ?>
-                    <?php echo "<p>" . $result["Description"] . "</p>" ?>
+                    <?php echo "<h1 style=\"color: orangered\">" . $result['Title'] . "</h1>" ?>
+                    <?php echo "<h5>" . $result['Author']. "</h5>" ?>
+                    <?php echo "<p>" . $result['Description'] . "</p>" ?>
                 </div>
                 <div class="kolom-md-2">
                     <div class="wrapper">
@@ -61,7 +61,7 @@
                         </select>
                     </div>
                     <div class="row" style="margin: auto">
-                        <?php echo "<button onclick=\"makeOrder('" . $GLOBALS['user']->getUsername() . "'," . $result["book_id"] . ")\" id=\"order-btn\">Order</button>" ?>
+                        <?php echo "<button onclick=\"makeOrder('" . $result['ID'] . "')\" id=\"order-btn\">Order</button>" ?>
                     </div>
                 </div>
             </div>
