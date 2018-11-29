@@ -66,32 +66,12 @@ function makeOrder(book_id, otpToken) {
             if (xhttp.responseText === "false") {
                 window.location = "http://localhost/tugasbesar2_2018/Pro-Book/index.php/Auth/index"
             }
-<<<<<<< HEAD
-            if (this.responseText === " failed"){
-                document.getElementById("success-message").innerHTML = "<p style='font-weight:bold'>Pesanan Gagal!</p>";
-                document.getElementById("overlay").style.display = "flex";
-                document.getElementById("checklist").style.display = "none";
-                document.getElementById("feedback").style.display = "block";
-                document.getElementById("close-button").addEventListener("click", function () {
-                    document.getElementById("overlay").style.display = "none";
-                    document.getElementById("feedback").style.display = "flex";
-                });
-            }else{
-                document.getElementById("success-message").innerHTML = "<p style='font-weight:bold'>Pesanan berhasil!</p><p>Nomor Transaksi:" + xhttp.responseText + "</p>";
-                document.getElementById("overlay").style.display = "flex";
-                document.getElementById("feedback").style.display = "block";
-                document.getElementById("close-button").addEventListener("click", function () {
-                    document.getElementById("overlay").style.display = "none";
-                    document.getElementById("feedback").style.display = "flex";
-                });
-=======
             let message;
             let success = !(this.responseText === " failed"); // for some reason there's extra padding in front (?)
             if (success) {
                 message = "<p style='font-weight:bold'>Pesanan berhasil!</p><p>Nomor Transaksi:" + xhttp.responseText + "</p>";
             } else {
                 message = "<p style='font-weight:bold'>Pesanan Gagal!</p>";
->>>>>>> f3e00ddc3711122d35633cbd9f0c6b7320823ff1
             }
             displayFeedbackModal(success, message);
         }

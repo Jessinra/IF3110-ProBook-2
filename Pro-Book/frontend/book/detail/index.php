@@ -73,19 +73,11 @@
                     </div>
                     <div id="order-btn-div" class="row" style="margin: auto">
                         <?php
-<<<<<<< HEAD
-                            if ($result["Price"] < 0){
-                                echo "<button disabled id=\"disabled-btn\">Order</button>";
-                            }
-                            else{
-                                echo "<button onclick=\"makeOrder('" . $result['ID'] . "')\" id=\"order-btn\">Order</button>";
-=======
                             if ($result["Price"] < 0) {
                                 echo "<button disabled id=\"order-btn\">Not For Sale</button>";
                             } else {
                                 echo "<button onclick=\"displayModal('otp-modal')\" id='order-btn'>Order</button>";
 //                                echo "<button onclick=\"makeOrder('" . $result['ID'] . "')\" id=\"order-btn\">Order</button>";
->>>>>>> f3e00ddc3711122d35633cbd9f0c6b7320823ff1
                             }
                         ?>
                     </div>
@@ -154,11 +146,7 @@
 
         <div class="row">
             <div class="kolom-md-12" id="close-button-container">
-<<<<<<< HEAD
-                <h3 class="close-button" id = "close-button">X</h3>
-=======
                 <button class="close-button" id="close-feedback-modal-button" onclick="closeModal('feedback-modal')">X</button>
->>>>>>> f3e00ddc3711122d35633cbd9f0c6b7320823ff1
             </div>
         </div>
 

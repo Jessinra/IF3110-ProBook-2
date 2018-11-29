@@ -18,18 +18,12 @@
             return $result;
         }
 
-<<<<<<< HEAD
-        public function orderBook($username, $cardId, $bookId, $bookAmount) {
-            $params = array("arg0" => $bookId, "arg1" => $cardId, "arg2" => $bookAmount);
-            $isPurchaseSuccess = $this->client->buyBook($params)->return;
-=======
         public function orderBook($username, $cardId, $bookId, $bookAmount, $otpToken) {
 
             $params = array("arg0" => $bookId, "arg1" => $cardId, "arg2" => $bookAmount, "arg3" => $otpToken);
-            $isPurchaseSuccess = $this->client->buyBook($params);
+            $isPurchaseSuccess = $this->client->buyBook($params)->return;
             $isPurchaseSuccess = $isPurchaseSuccess == "true";
 
->>>>>>> f3e00ddc3711122d35633cbd9f0c6b7320823ff1
             if ($isPurchaseSuccess) {
                 $conn = OpenCon();
                 $username = strval($username);
