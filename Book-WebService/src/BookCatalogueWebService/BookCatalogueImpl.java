@@ -41,12 +41,19 @@ public class BookCatalogueImpl implements BookCatalogue {
         return resultHandler.parseBookDetail(result);
     }
 
-    public boolean buyBook(String bookId, String cardId, int bookAmount) throws Exception {
+    public String buyBook(String bookId, String cardId, int bookAmount, String otpToken) throws Exception {
 
         System.out.println(">>> Begin buyBook");
         System.out.println("bookId : " + bookId);
         System.out.println("cardId : " + cardId);
         System.out.println("bookAmount : " + bookAmount);
+        System.out.println("otpToken : " + otpToken);
+
+        boolean otpAuthorized = BuyBook.validateOtp(cardId, otpToken);
+        if (!otpAuthorized){
+            System.out.println(">>> exit with un authorized otp");
+            return "false";
+        }
 
         String result = getBookDetail(bookId);
         JSONObject jsonResult = new JSONObject(result);
@@ -60,27 +67,26 @@ public class BookCatalogueImpl implements BookCatalogue {
         System.out.println("genres : " + Arrays.toString(genres));
         System.out.println("totalBookPrice : " + totalBookPrice);
 
-        boolean response = false;
         try {
             if (totalBookPrice < 0) {
                 throw new Exception("Cost less than 0");
             }
-
             String checkoutResponse = BuyBook.checkout(cardId, totalBookPrice);
             JSONObject res = new JSONObject(checkoutResponse);
 
-            // is this the way to check for success ?
             if (!res.has("err")) {
                 System.out.println("UPDATE");
-                response = BuyBook.upsert(bookId, genres, bookAmount);
+                Boolean upsertSuccess = BuyBook.upsert(bookId, genres, bookAmount);
+                if (upsertSuccess){
+                    return "true";
+                }
             }
-
         } catch (Exception e) {
             System.out.println("error in buy book");
             System.out.println(e.getMessage());
             return false;
         }
-        return response;
+        return "false";
     }
 
 

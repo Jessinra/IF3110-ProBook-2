@@ -118,6 +118,8 @@ Bank.getToken = function (senderCardId, callback) {
             callback(err, null);
         }
         else {
+            console.log("from inside");
+            console.log(res);
             callback(null, res);
         }
     });

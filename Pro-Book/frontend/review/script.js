@@ -59,7 +59,7 @@ function submit(){
 		xhttp.onreadystatechange = function() {
 			setTimeout(function(){}, 2000);
 			document.getElementById("overlay").style.display = "flex";
-	    	document.getElementById("feedback").style.display = "flex";
+	    	document.getElementById("feedback-modal").style.display = "flex";
 	    	setTimeout(back, 3000);
 		};
 		xhttp.send("comment="+comment+"&rating="+rating+"&book_id="+book_id+"&order_id="+order_id);

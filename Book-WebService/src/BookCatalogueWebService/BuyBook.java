@@ -1,5 +1,6 @@
 package BookCatalogueWebService;
 
+import java.io.IOException;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.io.BufferedReader;
@@ -7,7 +8,6 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.sql.Statement;
 
 public class BuyBook {
     static boolean upsert(String bookId, String[] genres, int bookAmount) {
@@ -61,8 +61,8 @@ public class BuyBook {
 
                 String price = res.getString(1).toLowerCase();
 
-                switch (price){
-                    case "free":{
+                switch (price) {
+                    case "free": {
                         return 0;
                     }
                     case "not available": {
@@ -77,10 +77,21 @@ public class BuyBook {
             }
         } catch (Exception e) {
             System.out.println("Exception in getPrice");
-            e.printStackTrace();
         }
 
         return -1;
+    }
+
+    static boolean validateOtp(String senderCardId, String otpToken) throws Exception {
+        String url = "http://localhost:3000/verifyOtp/" + senderCardId + "/" + otpToken;
+        try{
+            HttpURLConnection connection = HttpConnection.getHttpConnection(url);
+            String otpAuthorized = HttpConnection.parseHttpResponseText(connection);
+            return otpAuthorized.equals("true");
+        }
+        catch(Exception e) {
+            return false;
+        }
     }
 
     static String checkout(String senderCardId, float transferAmount) throws Exception {

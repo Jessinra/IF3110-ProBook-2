@@ -87,7 +87,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="overlay"><div id="feedback"><h2>Thank you for the review</h2></div></div>
+		<div id="overlay"><div id="feedback-modal"><h2>Thank you for the review</h2></div></div>
 	</body>
 	<script src="/tugasbesar2_2018/Pro-Book/frontend/review/script.js"></script>
 </html>

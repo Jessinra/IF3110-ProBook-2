@@ -26,8 +26,9 @@
                 $bookId = $_POST["book_id"];
                 $cardNum = $GLOBALS['user']->getCard();
                 $bookAmount = $_POST["amount"];
+                $otpToken = $_POST["otp"];
 
-                $order_id = $this->orderService->orderBook($username, $cardNum, $bookId, $bookAmount);
+                $order_id = $this->orderService->orderBook($username, $cardNum, $bookId, $bookAmount, $otpToken);
                 if(!$order_id){
                     echo "failed";
                 }else{

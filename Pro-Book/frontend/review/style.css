@@ -113,7 +113,7 @@ button {
 	background-color: rgba(0,0,0,0.5);
 }
 
-#feedback {
+#feedback-modal {
 	display:none;
 	width: 30vw;
     height: 15vh;
@@ -124,6 +124,6 @@ button {
     border-radius: 30px;
 }
 
-#feedback h2 {
+#feedback-modal h2 {
 	margin:auto;
 }

@@ -59,9 +59,11 @@ function generateRandomNumber(min_value, max_value) {
 }
 
 exports.generateOTP = function (req, res) {
-    let cardId = req.body["nomor_pengirim"];
+    let cardId = req.params["cardId"];
     let randomKey = generateRandomNumber(1000000000, 9999999999);
     let randomPad = randomKey.toString().slice(0, 2);
+
+    console.log("card Id :" + cardId);
     let code = HOTPGen.gen({string: cardId.toString() + randomKey.toString()});
 
     Bank.addToken(cardId, randomKey, function (err, res) {});
@@ -105,10 +107,10 @@ exports.testOTP = function (req, res) {
 
     request.post(
         'http://localhost:3000/generateOTP',
-        {json: {'nomor_pengirim': '2348793875'}},
+        {json: {'cardId': '2348793875'}},
         function (error, response, body) {
             if (!error && response.statusCode === 200) {
-                console.log(`body content :${body}`);
+                console.log(`body content : ${body}`);
             }
         }
     );
