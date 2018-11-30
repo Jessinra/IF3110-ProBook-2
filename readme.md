@@ -64,18 +64,20 @@ Pada basis data web service book, terdapat tabel:
 
 ## Mekanisme Pembangkitan Token dan Expiry Time
 
-## Kelebihan dan Kelemahan dari Arsitektur Aplikasi Dibandingkan dengan Aplikasi Monolitik
+## Kelebihan dan Kelemahan Arsitektur Aplikasi Dibandingkan Aplikasi Monolitik
 
 ### Kelebihan
 
-1. Penggunaan web service memiliki organisasi aplikasi yang lebih baik daripada monolitik sebab setiap webservice memiliki fungsi yang spesifik (dalam aplikasi ini terdapat webservice buku dan bank secara terpisah).
-2. Penggunaan web service memiliki coupling yang rendah, sehingga mudah untuk dilakukan development secara terpisah
-3. Pengembangan aplikasi dengan web service lebih mudah dan cepat serta memiliki tingkat kesulitan men-debug lebih rendah
+1. Penggunaan web service memiliki organisasi aplikasi yang lebih baik daripada monolitik sebab setiap webservice memiliki fungsi yang spesifik (dalam aplikasi ini terdapat webservice buku dan bank secara terpisah)
+2. Penggunaan web service memiliki coupling yang rendah, sehingga mudah untuk dilakukan development secara terpisah (pada monolitik couplingnya tinggi)
+3. Pengembangan aplikasi dengan web service lebih mudah dan cepat serta memiliki tingkat kesulitan men-debug lebih rendah dibandingkan dengan aplikasi monolitik
 4. Web service yang dibuat dapat dipergunakan kembali
 
 ### Kelemahan
 
-1. 
+1. Penggunaan aplikasi dengan web service mengharuskan deployment terhadap masing-masing web service, sehingga perlu dilakukan monitoring dan testing terhadap masing-masing service yang pada aplikasi monolitik hanya perlu dilakukan satu kali deployment
+2. Aplikasi dengan web service memiliki kinerja yang bisa jadi lebih lambat dibanding aplikasi monolitik sebab harus melakukan request ke web service terlebih dahulu
+
 
 7. [DELIVERABLE] Berikan penjelasan mengenai hal di bawah ini pada bagian **Penjelasan** dari *readme* repository git Anda:
     - Basis data dari sistem yang Anda buat, yaitu basis data aplkasi pro-book, webservice bank, dan webservice buku.
