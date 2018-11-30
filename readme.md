@@ -6,6 +6,8 @@ A website for book e-commerce written in plain PHP and Javascript for applicatio
 
 ### Pro-book
 
+![](mocks/tayobook.JPG)
+
 Pada basis data pro-book, terdapat tabel:
 
 1. Auth
@@ -26,6 +28,8 @@ Pada basis data pro-book, terdapat tabel:
 
 ### Web Service Bank
 
+![](mocks/bank.JPG)
+
 Pada basis data web service bank, terdapat tabel:
 
 1. Nasabah
@@ -41,6 +45,8 @@ Pada basis data web service bank, terdapat tabel:
     Untuk menyimpan kode otp untuk transaksi
 
 ### Web Service Book
+
+![](mocks/book.JPG)
 
 Pada basis data web service book, terdapat tabel:
 
@@ -79,7 +85,7 @@ Pada basis data web service book, terdapat tabel:
 2. Aplikasi dengan web service memiliki kinerja yang bisa jadi lebih lambat dibanding aplikasi monolitik sebab harus melakukan request ke web service terlebih dahulu
 
 
-7. [DELIVERABLE] Berikan penjelasan mengenai hal di bawah ini pada bagian **Penjelasan** dari *readme* repository git Anda:
+[DELIVERABLE] Berikan penjelasan mengenai hal di bawah ini pada bagian **Penjelasan** dari *readme* repository git Anda:
     - Basis data dari sistem yang Anda buat, yaitu basis data aplkasi pro-book, webservice bank, dan webservice buku.
     - Konsep *shared session* dengan menggunakan REST.
     - Mekanisme pembangkitan token dan expiry time pada aplikasi Anda.
