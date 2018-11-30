@@ -1,8 +1,33 @@
+# Pro-Books: Online Bookstore
+
+A website for book e-commerce written in plain PHP and Javascript for application, using SOAP web-service written in Java and RESTFUL web-service written in Node.JS.
+
+## Basis Data
+
+### Pro-book
+
+Pada basis data pro-book, terdapat tabel:
+####1. Auth
+    Untuk menyimpan access token
+####2. User
+    Untuk menyimpan data pengguna
+####3. Book_order
+    Untuk menyimpan data pembelian buku
+####4. Book_review
+    Untuk menyimpan review dari buku yang telah dibeli
+
 7. [DELIVERABLE] Berikan penjelasan mengenai hal di bawah ini pada bagian **Penjelasan** dari *readme* repository git Anda:
     - Basis data dari sistem yang Anda buat, yaitu basis data aplkasi pro-book, webservice bank, dan webservice buku.
     - Konsep *shared session* dengan menggunakan REST.
     - Mekanisme pembangkitan token dan expiry time pada aplikasi Anda.
     - Kelebihan dan kelemahan dari arsitektur aplikasi tugas ini, dibandingkan dengan aplikasi monolitik (login, CRUD DB, dll jadi dalam satu aplikasi)
+
+## Pembagian Tugas
+
+**Contributors**
+1. Ayrton Cyril / 13516019
+2. Jessin Donnyson / 13516117
+3. Nicholas Wijaya / 13516121
 
 REST :
 1. Validasi nomor kartu : 13516019
