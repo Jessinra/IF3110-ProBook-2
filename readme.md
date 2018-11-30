@@ -9,19 +9,15 @@ A website for book e-commerce written in plain PHP and Javascript for applicatio
 Pada basis data pro-book, terdapat tabel:
 
 1. Auth
-    
     Untuk menyimpan access token
     
 2. User
-
     Untuk menyimpan data pengguna
     
 3. Book_order
-
     Untuk menyimpan data pembelian buku
     
 4. Book_review
-
     Untuk menyimpan review dari buku yang telah dibeli
 
 ### Web Service Bank
@@ -29,17 +25,29 @@ Pada basis data pro-book, terdapat tabel:
 Pada basis data web service bank, terdapat tabel:
 
 1. Nasabah
-    
     Untuk menyimpan akun nasabah pengguna beserta nomor kartu dan saldo
     
 2. Transaksi
-
     Untuk menyimpan data transaksi transfer antara satu akun nasabah dengan akun nasabah lain
     
 3. OTP
-
     Untuk menyimpan kode otp untuk transaksi
 
+### Web Service Book
+
+Pada basis data web service book, terdapat tabel:
+
+1. Bookprices
+    Untuk menyimpan data harga buku
+    
+2. Genre
+    Untuk menyimpan data genre-genre buku yang ada
+    
+3. Sold
+    Untuk menyimpan data buku yang telah terjual beserta jumlahnya
+    
+4. Genresold
+    Untuk menyimpan data buku beserta genrenya (foreign key ke `Genre`)
 
 
 7. [DELIVERABLE] Berikan penjelasan mengenai hal di bawah ini pada bagian **Penjelasan** dari *readme* repository git Anda:
