@@ -65,7 +65,7 @@
     margin: 0 0 0 auto;
 }
 
-#disabled-btn {
+.disabled-btn {
     float: right;
     text-align: center;
     color: #fff;

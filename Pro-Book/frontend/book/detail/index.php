@@ -74,7 +74,7 @@
                     <div id="order-btn-div" class="row" style="margin: auto">
                         <?php
                             if ($result["Price"] < 0) {
-                                echo "<button disabled>Not For Sale</button>";
+                                echo "<button class=\"disabled-btn\">Not For Sale</button>";
                             } else {
                                 echo "<button class=\"order-btn\" onclick=\"displayModal('otp-modal')\">Order</button>";
                             }
