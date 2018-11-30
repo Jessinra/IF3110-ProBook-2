@@ -68,6 +68,16 @@ Pada basis data web service book, terdapat tabel:
 
 ## Konsep Shared Session dengan REST
 
+Pada dasarnya, tidak ada **client session state** yang disimpan pada server.
+
+REST bersifat *Stateless*, yang berarti **server** tidak menyimpan state apapun dari client. *Session client* disimpan oleh masing-masing client dan dikirim ke server hanya jika diperlukan. Dengan pendekatan ini, client tidak terikat pada satu server yang melayaninya, dan disisi lain server dapat melayani request dari client yang mana saja. 
+
+Prinsip ini **berlaku menyeluruh** walaupun service yang dibuat memerlukan informasi state (misal: *shopping cart*), walaupun server dikatakan tidak boleh menyimpan state, namun tidak berarti tidak boleh mengakses aplikasi lain yang menyimpan state tsb. (misal: database)
+
+Salah satu cara untuk menangani *state* pada REST server adalah dengan mengirimkan informasi state dari client-server-client secara terus menerus (berulang-ulang). Hal ini bisa dilakukan dengan menggunakan *hidden input field*, *query string*, ataupun *POST data in form*. (Martin Fowler)
+
+Cara lainnya adalah dengan menciptakan entitas baru (object) yang bisa menampung informasi state dan dapat diakses dengan direct URL. Entitas ini dapat disimpan dalam database / memory sesuai preferensi dan kebutuhan service. 
+
 ## Mekanisme Pembangkitan Token dan Expiry Time
 
 1. Token dibangkitkan saat user melakukan login dan dibangkitkan berdasarkan username dan waktu login
@@ -100,16 +110,16 @@ Pada basis data web service book, terdapat tabel:
 
 **Contributors**
 1. Ayrton Cyril / 13516019
-2. Jessin Donnyson / 13516117
+2. Jessin Donnyson / 13516112
 3. Nicholas Wijaya / 13516121
 
 REST :
 1. Validasi nomor kartu : 13516019
 2. Transfer             : 13516121
-3. Transfer with HTOP   : 13516117
+3. Transfer with HTOP   : 13516112
 
 SOAP :
-1. Search Book          : 13516117
+1. Search Book          : 13516112
 2. Book recommendation  : 13516121
 3. Buy book             : 13516019
 
@@ -122,9 +132,9 @@ Perubahan Web app :
 6. Halaman History      : 13516019
 7. Halaman Review       : 13516019
 8. Book Recommendation  : 13516121
-9. Modal HTOP           : 13516117
+9. Modal HTOP           : 13516112
 10. Access Token        : 13516019
 
 Bonus :
-1. Pembangkitan token HTOP/TOTP : 13516117
-2. Validasi token               : 13516117
+1. Pembangkitan token HTOP/TOTP : 13516112
+2. Validasi token               : 13516112
