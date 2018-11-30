@@ -9,15 +9,19 @@ A website for book e-commerce written in plain PHP and Javascript for applicatio
 Pada basis data pro-book, terdapat tabel:
 
 1. Auth
+
     Untuk menyimpan access token
     
 2. User
+
     Untuk menyimpan data pengguna
     
 3. Book_order
+
     Untuk menyimpan data pembelian buku
     
 4. Book_review
+
     Untuk menyimpan review dari buku yang telah dibeli
 
 ### Web Service Bank
@@ -25,12 +29,15 @@ Pada basis data pro-book, terdapat tabel:
 Pada basis data web service bank, terdapat tabel:
 
 1. Nasabah
+
     Untuk menyimpan akun nasabah pengguna beserta nomor kartu dan saldo
     
 2. Transaksi
+
     Untuk menyimpan data transaksi transfer antara satu akun nasabah dengan akun nasabah lain
     
 3. OTP
+
     Untuk menyimpan kode otp untuk transaksi
 
 ### Web Service Book
@@ -38,17 +45,37 @@ Pada basis data web service bank, terdapat tabel:
 Pada basis data web service book, terdapat tabel:
 
 1. Bookprices
+
     Untuk menyimpan data harga buku
     
 2. Genre
+
     Untuk menyimpan data genre-genre buku yang ada
     
 3. Sold
+
     Untuk menyimpan data buku yang telah terjual beserta jumlahnya
     
 4. Genresold
+
     Untuk menyimpan data buku beserta genrenya (foreign key ke `Genre`)
 
+## Konsep Shared Session dengan REST
+
+## Mekanisme Pembangkitan Token dan Expiry Time
+
+## Kelebihan dan Kelemahan dari Arsitektur Aplikasi Dibandingkan dengan Aplikasi Monolitik
+
+### Kelebihan
+
+1. Penggunaan web service memiliki organisasi aplikasi yang lebih baik daripada monolitik sebab setiap webservice memiliki fungsi yang spesifik (dalam aplikasi ini terdapat webservice buku dan bank secara terpisah).
+2. Penggunaan web service memiliki coupling yang rendah, sehingga mudah untuk dilakukan development secara terpisah
+3. Pengembangan aplikasi dengan web service lebih mudah dan cepat serta memiliki tingkat kesulitan men-debug lebih rendah
+4. Web service yang dibuat dapat dipergunakan kembali
+
+### Kelemahan
+
+1. 
 
 7. [DELIVERABLE] Berikan penjelasan mengenai hal di bawah ini pada bagian **Penjelasan** dari *readme* repository git Anda:
     - Basis data dari sistem yang Anda buat, yaitu basis data aplkasi pro-book, webservice bank, dan webservice buku.
