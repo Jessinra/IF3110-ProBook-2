@@ -70,6 +70,11 @@ Pada basis data web service book, terdapat tabel:
 
 ## Mekanisme Pembangkitan Token dan Expiry Time
 
+1. Token dibangkitkan saat user melakukan login dan dibangkitkan berdasarkan username dan waktu login
+2. Token di save pada database beserta username, ip address, browser dan expiry time dari token
+3. Token dicek setiap kali user masuk ke halaman selain login dan register
+4. 1 token mewakili tepat 1 user pada 1 browser dan 1 ip address
+
 ## Kelebihan dan Kelemahan Arsitektur Aplikasi Dibandingkan Aplikasi Monolitik
 
 ### Kelebihan
