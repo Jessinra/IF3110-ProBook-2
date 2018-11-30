@@ -8,19 +8,19 @@ A website for book e-commerce written in plain PHP and Javascript for applicatio
 
 Pada basis data pro-book, terdapat tabel:
 
-####1. Auth
+1. Auth
     
     Untuk menyimpan access token
     
-####2. User
+2. User
 
     Untuk menyimpan data pengguna
     
-####3. Book_order
+3. Book_order
 
     Untuk menyimpan data pembelian buku
     
-####4. Book_review
+4. Book_review
 
     Untuk menyimpan review dari buku yang telah dibeli
 
@@ -28,15 +28,15 @@ Pada basis data pro-book, terdapat tabel:
 
 Pada basis data web service bank, terdapat tabel:
 
-####1. Nasabah
+1. Nasabah
     
     Untuk menyimpan akun nasabah pengguna beserta nomor kartu dan saldo
     
-####2. Transaksi
+2. Transaksi
 
     Untuk menyimpan data transaksi transfer antara satu akun nasabah dengan akun nasabah lain
     
-####3. OTP
+3. OTP
 
     Untuk menyimpan kode otp untuk transaksi
 
