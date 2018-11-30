@@ -1,20 +1,46 @@
 # Pro-Books: Online Bookstore
 
-A website for book e-commerce written in plain PHP and Javascript for application, using SOAP web-service written in Java and RESTFUL web-service written in Node.JS.
+A website for book e-commerce written in plain PHP and Javascript for application, using SOAP as book web service written in Java and RESTFUL as bank web service written in Node.JS.
 
 ## Basis Data
 
 ### Pro-book
 
 Pada basis data pro-book, terdapat tabel:
+
 ####1. Auth
+    
     Untuk menyimpan access token
+    
 ####2. User
+
     Untuk menyimpan data pengguna
+    
 ####3. Book_order
+
     Untuk menyimpan data pembelian buku
+    
 ####4. Book_review
+
     Untuk menyimpan review dari buku yang telah dibeli
+
+### Web Service Bank
+
+Pada basis data web service bank, terdapat tabel:
+
+####1. Nasabah
+    
+    Untuk menyimpan akun nasabah pengguna beserta nomor kartu dan saldo
+    
+####2. Transaksi
+
+    Untuk menyimpan data transaksi transfer antara satu akun nasabah dengan akun nasabah lain
+    
+####3. OTP
+
+    Untuk menyimpan kode otp untuk transaksi
+
+
 
 7. [DELIVERABLE] Berikan penjelasan mengenai hal di bawah ini pada bagian **Penjelasan** dari *readme* repository git Anda:
     - Basis data dari sistem yang Anda buat, yaitu basis data aplkasi pro-book, webservice bank, dan webservice buku.
