@@ -123,6 +123,7 @@ Perubahan Web app :
 7. Halaman Review       : 13516019
 8. Book Recommendation  : 13516121
 9. Modal HTOP           : 13516117
+10. Access Token        : 13516019
 
 Bonus :
 1. Pembangkitan token HTOP/TOTP : 13516117
